@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Programming</title>
+    <link href="css/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen h-full flex flex-col bg-gray-700">
+        <nav class="flex items-center justify-between flex-wrap bg-red-600 p-8 py-4 px-6 border border-gray-700 rectangle" >
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <a href="/" class="font-semibold text-xl tracking-tight">Sports Event</a>
+            </div>
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                <div class="text-sm lg:flex-grow">
+                    <a href="/" class="block mt-4 lg:inline-bloc
+                    k lg:mt-0 text-gray-300 hover:underline mr-4">
+                        Participants
+                    </a>
+                 </div>
+            </div>
+        </nav>
+        <div class="flex justify-center mt-3">
+            <div class="w-full max-w-lg md:max-w-6xl">
+                <div class="w-full my-2">
+                    <div class="flex justify-between text-white">
+                        <span class="text-2xl">Participants</span>
+                        
+                    </div>
+                </div>
+                <div class="flex justify-center mt-3">
+            <div class="w-full max-w-lg md:max-w-6xl">
+                <div class="w-full my-2">
+                    <div class="flex justify-between">
+                    
+                  	  	<a href="/add 2km Participants" class="bg-red-600 hover:bg-gray-800 text-white font-bold py-2 px-4 border border-gray-700 rounded">
+                            Add New 2KM Participants
+                        </a>
+                        
+                        <a href="/add 5km Participants" class="bg-red-600 hover:bg-gray-800 text-white font-bold py-2 px-4 border border-gray-700 rounded">
+                            Add New 5KM Participants
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="w-full">
+                    <table class="w-full text-left">
+                        <thead class="border border-black bg-gray-300">
+                            <tr>
+                            	<th class="w-2/15 px-2 py-2 border border-gray-700 square">ID</th>
+                            	<th class="w-4/15 px-2 py-2 border border-gray-700 square">Name</th>
+                            	<th class="w-3/15 px-2 py-2 border border-gray-700 square">IC Number</th>
+                            	<th class="w-3/15 px-2 py-2 border border-gray-700 square">Sports</th>
+                            	<th class="w-5/15 px-2 py-2 border border-gray-700 square">Email</th>
+                           		<th class="w-5/15 px-2 py-2 border border-gray-700 square">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-gray-100">
+                              <tr th:each="registration : ${ registration }" class="border-b border-gray-300 hover:bg-white">
+                                <th th:text="${ registration.id }" class="px-2 py-2 border border-gray-700 square"></th>
+                                <th th:text="${ registration.name }" class="px-2 py-2 border border-gray-700 square"></th>
+                                <th th:text="${ registration.icNumber }" class="px-2 py-2 border border-gray-700 square"></th>
+                                <th th:text="${ registration.sports }" class="px-2 py-2 border border-gray-700 square"></th>
+                                <th th:text="${ registration.email }" class="px-2 py-2 border border-gray-700 square"></th>
+                                <th class="flex justify-between px-2 py-2 border border-gray-700 square">
+                                    <a th:href="'/editParticipants/' + ${ ParticipantsId }" class="bg-red-600 hover:bg-gray-800 text-white font-bold py-2 px-4 border border-gray-700 rounded">
+                                        Edit
+                                    </a>
+                                    <a th:href="'/deleteParticipants/' + ${ ParticipantsId }" class="bg-red-600 hover:bg-gray-800 text-white font-bold py-2 px-4 border border-gray-700 rounded">
+                                        Delete
+                                    </a>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
